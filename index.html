@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>クビ男の台所</title>
+<meta name="description" content="会社をクビになった男が、1食100円以内で生きる記録。クビ男の貧乏メシ日記で使っている調理器具・食材・調味料を紹介します。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #fff7f2;
+    --paper: #ffffff;
+    --ink: #2b2222;
+    --sub: #6f6260;
+    --coral: #ff7050;
+    --coral-dark: #e0553a;
+    --yellow: #ffd24a;
+    --navy: #1f2a44;
+    --line: #f0e2da;
+    --pink: #f8c8cd;
+    --teal: #acdcde;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--cream);
+    color: var(--ink);
+    font-family: "Noto Sans JP", system-ui, sans-serif;
+    line-height: 1.75;
+  }
+  a { color: inherit; }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 0 16px; }
+
+  /* PR表記 (ステマ規制対応) */
+  .pr-bar {
+    background: var(--navy);
+    color: #fff;
+    font-size: 12px;
+    text-align: center;
+    padding: 6px 16px;
+  }
+
+  /* 見出し部分 */
+  header.hero {
+    position: relative;
+    overflow: hidden;
+    padding: 40px 0 28px;
+  }
+  .hero::before, .hero::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    z-index: 0;
+  }
+  .hero::before { width: 320px; height: 320px; background: var(--pink); top: -140px; right: -110px; }
+  .hero::after  { width: 220px; height: 220px; background: var(--teal); bottom: -120px; left: -90px; }
+  .hero .wrap { position: relative; z-index: 1; display: flex; align-items: center; gap: 16px; }
+  .hero-text { flex: 1; min-width: 0; }
+  .label {
+    display: inline-block;
+    background: var(--coral);
+    color: #fff;
+    font-weight: 700;
+    font-size: 13px;
+    padding: 2px 12px;
+    border-radius: 999px;
+  }
+  h1 {
+    font-weight: 900;
+    font-size: clamp(34px, 9vw, 56px);
+    line-height: 1.15;
+    margin: 10px 0 8px;
+    letter-spacing: 0.02em;
+  }
+  h1 span { color: var(--coral); }
+  .lead { margin: 0; font-size: 15px; color: var(--sub); }
+  .hero img { width: clamp(120px, 34vw, 210px); height: auto; flex-shrink: 0; }
+
+  .sns { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+  .sns a {
+    text-decoration: none;
+    background: var(--paper);
+    border: 2px solid var(--ink);
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 14px;
+    padding: 4px 14px;
+  }
+  .sns a:hover { background: var(--yellow); }
+
+  /* セクション */
+  section { padding: 28px 0; }
+  h2 {
+    font-weight: 900;
+    font-size: 24px;
+    margin: 0 0 4px;
+    display: inline-block;
+    background: linear-gradient(transparent 62%, var(--yellow) 62%);
+  }
+  .note { font-size: 14px; color: var(--sub); margin: 4px 0 16px; }
+
+  .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(200px, 100%), 1fr)); gap: 12px; }
+  .card {
+    background: var(--paper);
+    border-radius: 16px;
+    padding: 16px;
+    box-shadow: 0 4px 14px rgba(43, 34, 34, 0.06);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .card .tag { font-size: 12px; font-weight: 700; color: var(--coral); }
+  .card h3 { margin: 0; font-size: 17px; line-height: 1.4; }
+  .card p { margin: 0; font-size: 14px; color: var(--sub); flex: 1; }
+  .card .soon {
+    margin-top: 6px;
+    font-size: 13px;
+    font-weight: 700;
+    text-align: center;
+    border: 2px dashed var(--line);
+    border-radius: 10px;
+    padding: 6px;
+    color: var(--sub);
+  }
+
+  .card .used { font-size: 12px; color: var(--sub); flex: 0; background: var(--cream); border-radius: 8px; padding: 4px 8px; }
+  .card .buy {
+    display: block; margin-top: 6px; text-decoration: none; font-weight: 700; font-size: 14px; line-height: 1.4;
+    background: var(--coral); color: #fff; border-radius: 10px; padding: 8px 12px;
+  }
+  .card .buy span { display: block; font-size: 11px; font-weight: 400; opacity: 0.9; }
+  .card .buy:hover { background: var(--coral-dark); }
+  .card .clip { display: grid; grid-template-columns: 1fr; gap: 6px; margin: 4px 0; }
+  .card .clip.two { grid-template-columns: 1fr 1fr; }
+  .card .clip video { width: 100%; aspect-ratio: 9 / 16; border-radius: 12px; background: var(--navy); object-fit: cover; }
+  .pick-note { font-size: 12px; color: var(--sub); margin: 12px 0 0; }
+  img.imp { position: absolute; width: 1px; height: 1px; opacity: 0; }
+
+  /* これまでの貧乏メシ */
+  .meals { list-style: none; margin: 0; padding: 0; background: var(--paper); border-radius: 16px; overflow: hidden; }
+  .meals li {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    padding: 10px 16px;
+    border-bottom: 1px solid var(--line);
+    font-size: 15px;
+  }
+  .meals li:last-child { border-bottom: 0; }
+  .meals .no { font-weight: 900; color: var(--coral); width: 2.2em; flex-shrink: 0; }
+  .meals .name { flex: 1; min-width: 0; }
+  .meals .yen { font-weight: 900; white-space: nowrap; }
+  .more { margin-top: 10px; text-align: center; }
+  .more button {
+    font: inherit;
+    font-weight: 700;
+    font-size: 14px;
+    background: var(--paper);
+    border: 2px solid var(--ink);
+    border-radius: 999px;
+    padding: 6px 18px;
+    cursor: pointer;
+  }
+
+  /* フッター */
+  footer { background: var(--navy); color: #e8e8f0; margin-top: 24px; padding: 28px 0 40px; font-size: 13px; }
+  footer h2 { background: none; color: #fff; font-size: 16px; }
+  footer p { margin: 6px 0; }
+  footer .copy { margin-top: 18px; opacity: 0.7; }
+</style>
+</head>
+<body>
+
+<div class="pr-bar">当サイトはアフィリエイト広告（PR）を利用しています</div>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="hero-text">
+      <span class="label">クビ男の貧乏メシ日記</span>
+      <h1>クビ男の<span>台所</span></h1>
+      <p class="lead">会社をクビになりました。<br>1食100円以内で、なんとか生きています。<br>ここでは動画で使っている道具や食材を紹介します。</p>
+      <div class="sns">
+        <a href="https://www.instagram.com/kubiotoko_meshi/" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.tiktok.com/@kubiotoko_meshi" target="_blank" rel="noopener">TikTok</a>
+        <a href="#" target="_blank" rel="noopener" data-todo="YouTubeのチャンネルURL">YouTube</a>
+      </div>
+    </div>
+    <img src="images/kubio_chara.png" alt="クビ男のイラスト" width="568" height="600">
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section id="tools">
+    <h2>クビ男の道具</h2>
+    <p class="note">毎日使っている道具に近いものを選びました。安くても長く使えるものだけ。<br>動画は、インスタのストーリーズで紹介しているものです。</p>
+    <div class="cards">
+      <div class="card"><span class="tag">調理器具</span><h3>小さいフライパン</h3><div class="clip"><video src="videos/frypan.mp4" poster="videos/frypan.jpg" controls playsinline preload="none" aria-label="小さいフライパンの紹介動画"></video></div><p>玉子焼きから焼き魚まで、ほぼ毎回これ一つです。軽いと、毎日の片づけも少しだけ楽になります。</p><p class="used">動画では：カニ玉丼、もやし炒め、たまごピーマン炒め など</p><a class="buy" href="https://af.moshimo.com/af/c/click?a_id=5917070&amp;p_id=54&amp;pc_id=54&amp;pl_id=616&amp;url=https%3A%2F%2Fitem.rakuten.co.jp%2Fkai%2F000dw5629%2F" target="_blank" rel="nofollow sponsored noopener">貝印 軽いフライパン 20cm<span>楽天市場で見る（PR）</span></a></div>
+      <div class="card"><span class="tag">調理器具</span><h3>片手鍋</h3><div class="clip"><video src="videos/pot.mp4" poster="videos/pot.jpg" controls playsinline preload="none" aria-label="片手鍋の紹介動画"></video></div><p>麺をゆでる、味噌汁を作る。一人暮らしはこれで足ります。ガラスのふたなら、ふきこぼれも見張れます。</p><p class="used">動画では：月見うどん、きのこクリームうどん、味噌汁 など</p><a class="buy" href="https://af.moshimo.com/af/c/click?a_id=5917070&amp;p_id=54&amp;pc_id=54&amp;pl_id=616&amp;url=https%3A%2F%2Fitem.rakuten.co.jp%2Flivingplaza%2F10006509%2F" target="_blank" rel="nofollow sponsored noopener">カクセー ステンレス片手鍋 16cm ガラス蓋付<span>楽天市場で見る（PR）</span></a></div>
+      <div class="card"><span class="tag">調理器具</span><h3>包丁とまな板</h3><div class="clip two"><video src="videos/knife.mp4" poster="videos/knife.jpg" controls playsinline preload="none" aria-label="包丁とまな板の紹介動画"></video><video src="videos/board.mp4" poster="videos/board.jpg" controls playsinline preload="none" aria-label="包丁とまな板の紹介動画"></video></div><p>見切り品の野菜も、切ればちゃんとおかずになります。よく切れる包丁は、結局いちばん節約になります。</p><p class="used">動画では：ピーマン、しめじ、ニラ、たくあん を切るところ</p><a class="buy" href="https://af.moshimo.com/af/c/click?a_id=5917070&amp;p_id=54&amp;pc_id=54&amp;pl_id=616&amp;url=https%3A%2F%2Fitem.rakuten.co.jp%2Fnagomi-ec%2Frl-st%2F" target="_blank" rel="nofollow sponsored noopener">Riverline 三徳包丁 16.5cm<span>楽天市場で見る（PR）</span></a><a class="buy" href="https://af.moshimo.com/af/c/click?a_id=5917070&amp;p_id=54&amp;pc_id=54&amp;pl_id=616&amp;url=https%3A%2F%2Fitem.rakuten.co.jp%2Faurora77%2Fmanaita%2F" target="_blank" rel="nofollow sponsored noopener">抗菌まな板（食洗機対応）<span>楽天市場で見る（PR）</span></a></div>
+    </div>
+  </section>
+
+  <section id="foods">
+    <h2>いつもの食材</h2>
+    <p class="note">ごはん1食30円。安い食材でどこまでいけるか試しています。</p>
+    <div class="cards">
+      <div class="card"><span class="tag">食材</span><h3>お米</h3><div class="clip"><video src="videos/rice.mp4" poster="videos/rice.jpg" controls playsinline preload="none" aria-label="お米の紹介動画"></video></div><p>1食分（75g）でだいたい30円。貧乏メシの主役です。無洗米なら、水も手間も少しだけ節約できます。</p><p class="used">動画では：ほぼ全部の定食・丼</p><a class="buy" href="https://af.moshimo.com/af/c/click?a_id=5917070&amp;p_id=54&amp;pc_id=54&amp;pl_id=616&amp;url=https%3A%2F%2Fitem.rakuten.co.jp%2Fokaman%2F10000003%2F" target="_blank" rel="nofollow sponsored noopener">岡山県産 コシヒカリ 無洗米 5kg<span>楽天市場で見る（PR）</span></a></div>
+      <div class="card"><span class="tag">食材</span><h3>パスタ</h3><div class="clip"><video src="videos/pasta.mp4" poster="videos/pasta.jpg" controls playsinline preload="none" aria-label="パスタの紹介動画"></video></div><p>1食28円。ナポリタンにもスンドゥブ風にもなります。1kgあれば、しばらく食いつなげます。</p><p class="used">動画では：海苔パスタ（39円）、挽肉ピーマンナポリタン、スンドゥブ風パスタ</p><a class="buy" href="https://af.moshimo.com/af/c/click?a_id=5917070&amp;p_id=54&amp;pc_id=54&amp;pl_id=616&amp;url=https%3A%2F%2Fitem.rakuten.co.jp%2Frakuten24%2F4902110264388%2F" target="_blank" rel="nofollow sponsored noopener">マ・マー スパゲティ 1.6mm 1kg<span>楽天市場で見る（PR）</span></a></div>
+      <div class="card"><span class="tag">食材</span><h3>味噌汁の素</h3><div class="clip"><video src="videos/miso.mp4" poster="videos/miso.jpg" controls playsinline preload="none" aria-label="味噌汁の素の紹介動画"></video></div><p>これがあるだけで定食っぽくなります。動画では1杯11円の安いものを使っていますが、まとめ買いならこちらも。</p><p class="used">動画では：ほぼ全部の定食</p><a class="buy" href="https://af.moshimo.com/af/c/click?a_id=5917070&amp;p_id=54&amp;pc_id=54&amp;pl_id=616&amp;url=https%3A%2F%2Fitem.rakuten.co.jp%2Fkk1206%2Fsyoku00221%2F" target="_blank" rel="nofollow sponsored noopener">永谷園 あさげ 業務用 30食<span>楽天市場で見る（PR）</span></a></div>
+    </div>
+  </section>
+
+  <section id="seasonings">
+    <h2>頼れる調味料</h2>
+    <p class="note">少しで味が決まるものは、結局いちばん安上がりです。</p>
+    <div class="cards">
+      <div class="card"><span class="tag">調味料</span><h3>めんつゆ</h3><div class="clip"><video src="videos/mentsuyu.mp4" poster="videos/mentsuyu.jpg" controls playsinline preload="none" aria-label="めんつゆの紹介動画"></video></div><p>うどん、丼もの、煮物まで。迷ったらこれです。2倍濃縮の1Lなら、しばらく味に困りません。</p><p class="used">動画では：月見うどん、カニ玉丼 など</p><a class="buy" href="https://af.moshimo.com/af/c/click?a_id=5917070&amp;p_id=54&amp;pc_id=54&amp;pl_id=616&amp;url=https%3A%2F%2Fitem.rakuten.co.jp%2Frakuten24%2Fe339049h%2F" target="_blank" rel="nofollow sponsored noopener">ミツカン 追いがつおつゆ 2倍 1L<span>楽天市場で見る（PR）</span></a></div>
+      <div class="card"><span class="tag">調味料</span><h3>鶏ガラスープの素</h3><div class="clip"><video src="videos/gara.mp4" poster="videos/gara.jpg" controls playsinline preload="none" aria-label="鶏ガラスープの素の紹介動画"></video></div><p>チャーハンもスープも、肉なしで肉っぽい味に。肉が買えない日の味方です。</p><p class="used">動画では：チャーハン定食、もやしナムル（予定）</p><a class="buy" href="https://af.moshimo.com/af/c/click?a_id=5917070&amp;p_id=54&amp;pc_id=54&amp;pl_id=616&amp;url=https%3A%2F%2Fitem.rakuten.co.jp%2Fjetprice%2Fx20561%2F" target="_blank" rel="nofollow sponsored noopener">味の素 丸鶏がらスープ 瓶 55g<span>楽天市場で見る（PR）</span></a></div>
+      <div class="card"><span class="tag">調味料</span><h3>カレールー</h3><div class="clip"><video src="videos/curry.mp4" poster="videos/curry.jpg" controls playsinline preload="none" aria-label="カレールーの紹介動画"></video></div><p>1かけ18円。野菜だけでもカレーは裏切りません。</p><p class="used">動画では：野菜カレー（95円）、カレーそば（58円）</p><a class="buy" href="https://af.moshimo.com/af/c/click?a_id=5917070&amp;p_id=54&amp;pc_id=54&amp;pl_id=616&amp;url=https%3A%2F%2Fitem.rakuten.co.jp%2Fmatsukiyo%2F4902402853887%2F" target="_blank" rel="nofollow sponsored noopener">ハウス バーモントカレー 中辛 230g<span>楽天市場で見る（PR）</span></a></div>
+    </div>
+    <p class="pick-note">※商品は楽天市場で探した、動画で使っているものに近いものです（同じものとは限りません）。値段や在庫は変わることがあるので、リンク先でご確認ください。</p>
+  </section>
+
+  <section id="meals">
+    <h2>これまでの貧乏メシ</h2>
+    <p class="note">動画で作った料理と、1食の値段です。</p>
+    <ul class="meals" id="meal-list"></ul>
+    <div class="more"><button type="button" id="more-btn">すべて見る</button></div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <h2>このサイトについて</h2>
+    <p>運営：クビ男（クビ男の貧乏メシ日記）</p>
+    <p>お問い合わせは Instagram のDMからお願いします。</p>
+    <h2>広告とプライバシーについて</h2>
+    <p>当サイトは、Amazon・楽天市場・Yahoo!ショッピングなどのアフィリエイトプログラムを利用しています。紹介している商品のリンクから購入されると、運営者に報酬が入ることがあります。</p>
+    <p>アフィリエイトの仕組みのため、提携先がクッキーを使うことがあります。クッキーは、ブラウザの設定でオフにできます。</p>
+    <img class="imp" src="https://i.moshimo.com/af/i/impression?a_id=5917070&amp;p_id=54&amp;pc_id=54&amp;pl_id=616" width="1" height="1" alt="" loading="lazy">
+    <p class="copy">© クビ男の台所</p>
+  </div>
+</footer>
+
+<script>
+  // これまでの貧乏メシ (番号, 料理, 値段)。新しい回は上に足す
+  const MEALS = [
+    [31, "きのこクリームうどんセット", 79],
+    [30, "もやし炒め定食", 72],
+    [29, "おにぎり定食", 85],
+    [28, "カニ玉丼", 94],
+    [27, "スンドゥブ風パスタ", 63],
+    [26, "焼き魚定食", 99],
+    [25, "カレーそば", 58],
+    [24, "シチューセット", 90],
+    [23, "レバニラ定食", 98],
+    [22, "お好み焼きセット", 75],
+    [21, "焼き鮭定食", 99],
+    [20, "焼きうどんセット", 90],
+    [19, "うな丼定食", 98],
+    [18, "チャーハン定食", 82],
+    [17, "目玉トーストセット", 87],
+    [16, "味噌ラーメン", 64],
+    [15, "酢豚定食", 95],
+    [14, "焼きそば定食", 93],
+    [13, "豆腐ステーキ定食", 77],
+    [12, "月見うどん", 66],
+    [11, "親子丼", 96],
+    [10, "醤油ラーメン", 98],
+    [9, "野菜カレー", 95],
+    [8, "海苔パスタ", 39],
+    [7, "マーボー豆腐定食", 81],
+    [6, "納豆TKG定食", 92],
+    [5, "めざし定食", 99],
+    [4, "三宝菜定食", 91],
+    [3, "餃子定食", 85],
+    [2, "コロッケそば", 61],
+    [1, "挽肉ピーマンナポリタン", 85],
+  ];
+  const FIRST = 8;
+  const list = document.getElementById("meal-list");
+  const btn = document.getElementById("more-btn");
+  function render(all) {
+    list.innerHTML = "";
+    (all ? MEALS : MEALS.slice(0, FIRST)).forEach(([no, name, yen]) => {
+      const li = document.createElement("li");
+      li.innerHTML = `<span class="no">${String(no).padStart(2, "0")}</span><span class="name"></span><span class="yen">${yen}円</span>`;
+      li.querySelector(".name").textContent = name;
+      list.appendChild(li);
+    });
+    btn.parentElement.style.display = all ? "none" : "";
+  }
+  btn.addEventListener("click", () => render(true));
+  render(false);
+</script>
+</body>
+</html>
