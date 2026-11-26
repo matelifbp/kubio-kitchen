@@ -139,6 +139,16 @@
   .pick-note { font-size: 12px; color: var(--sub); margin: 12px 0 0; }
   img.imp { position: absolute; width: 1px; height: 1px; opacity: 0; }
 
+
+  /* レシピ */
+  .recipes { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(150px, 46%), 1fr)); gap: 12px; }
+  .recipe { display: flex; flex-direction: column; gap: 2px; text-decoration: none; background: var(--paper); border-radius: 16px; padding: 10px; box-shadow: 0 4px 14px rgba(43, 34, 34, 0.06); }
+  .recipe img { width: 100%; height: auto; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 12px; margin-bottom: 6px; }
+  .recipe .tag { font-size: 11px; font-weight: 700; color: var(--coral); }
+  .recipe b { font-size: 15px; line-height: 1.4; }
+  .recipe .yen { font-weight: 900; color: var(--coral); }
+  .recipe:hover { background: #fff1c9; }
+
   /* これまでの貧乏メシ */
   .meals { list-style: none; margin: 0; padding: 0; background: var(--paper); border-radius: 16px; overflow: hidden; }
   .meals li {
@@ -225,6 +235,19 @@
     <p class="pick-note">※商品は楽天市場で探した、動画で使っているものに近いものです（同じものとは限りません）。値段や在庫は変わることがあるので、リンク先でご確認ください。</p>
   </section>
 
+  <section id="recipes">
+    <h2>レシピ</h2>
+    <p class="note">動画で作った料理の、材料と値段・作り方です。</p>
+    <div class="recipes">
+      <a class="recipe" href="recipes/tsukune.html"><img src="images/recipes/tsukune.jpg" alt="" width="540" height="960" loading="lazy"><span class="tag">限界飯｜第32回</span><b>焼きつくね丼</b><span class="yen">45円</span></a>
+      <a class="recipe" href="recipes/kinoko.html"><img src="images/recipes/kinoko.jpg" alt="" width="540" height="960" loading="lazy"><span class="tag">貧乏メシ｜第31回</span><b>きのこクリームうどんセット</b><span class="yen">79円</span></a>
+      <a class="recipe" href="recipes/moyasi.html"><img src="images/recipes/moyasi.jpg" alt="" width="540" height="960" loading="lazy"><span class="tag">貧乏メシ｜第30回</span><b>もやし炒め定食</b><span class="yen">72円</span></a>
+      <a class="recipe" href="recipes/tyahan.html"><img src="images/recipes/tyahan.jpg" alt="" width="540" height="960" loading="lazy"><span class="tag">貧乏メシ｜第18回</span><b>チャーハン定食</b><span class="yen">82円</span></a>
+      <a class="recipe" href="recipes/curry.html"><img src="images/recipes/curry.jpg" alt="" width="540" height="960" loading="lazy"><span class="tag">貧乏メシ｜第9回</span><b>野菜カレー</b><span class="yen">95円</span></a>
+      <a class="recipe" href="recipes/nori.html"><img src="images/recipes/nori.jpg" alt="" width="540" height="960" loading="lazy"><span class="tag">貧乏メシ｜第8回</span><b>海苔パスタ</b><span class="yen">39円</span></a>
+    </div>
+  </section>
+
   <section id="meals">
     <h2>これまでの貧乏メシ</h2>
     <p class="note">動画で作った料理と、1食の値段です。</p>
@@ -250,6 +273,7 @@
 <script>
   // これまでの貧乏メシ (番号, 料理, 値段)。新しい回は上に足す
   const MEALS = [
+    [32, "焼きつくね丼", 45],
     [31, "きのこクリームうどんセット", 79],
     [30, "もやし炒め定食", 72],
     [29, "おにぎり定食", 85],
